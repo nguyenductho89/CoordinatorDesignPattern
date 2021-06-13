@@ -9,13 +9,14 @@
 import UIKit
 
 class AppTabBarCoordinator: Coordinator, HavingKeyWindow {
-    private let navigationController = UINavigationController()
     var window: UIWindow
     required init(window: UIWindow) {
         self.window = window
-        window.rootViewController = navigationController
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }
+    
+    private let tabBarController = TabBarController()
     
     private let topRatedNavigationController: UINavigationController = {
         let topRatedNavigationController = UINavigationController()
@@ -46,17 +47,10 @@ class AppTabBarCoordinator: Coordinator, HavingKeyWindow {
     }()
     
     func start() {
-        
-        let topRatedCoordinator = TopRatedCoordinator(navigationController: self.topRatedNavigationController)
-        let tabBarController = TabBarController()
         tabBarController.coordinator = self
         tabBarController.viewControllers = [topRatedNavigationController,
                                             searchNavigationController,
                                             historyNavigationController]
-        
-        tabBarController.modalPresentationStyle = .fullScreen
-        navigationController.present(tabBarController, animated: false, completion: nil)
-        
         coordinate(to: topRatedCoordinator)
         coordinate(to: searchCoordinator)
         coordinate(to: historyCoordinator)
