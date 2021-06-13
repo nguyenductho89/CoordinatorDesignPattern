@@ -15,7 +15,7 @@ protocol TopRatedFlow: class {
 class TopRatedCoordinator: Coordinator, TopRatedFlow {
     
     weak var navigationController: UINavigationController?
-    
+    var topRatedDetailCoordinator: TopRatedDetailCoordinator?
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -29,7 +29,7 @@ class TopRatedCoordinator: Coordinator, TopRatedFlow {
     
     // MARK: - Flow Methods
     func coordinateToDetail() {
-        let topRatedDetailCoordinator = TopRatedDetailCoordinator(navigationController: navigationController!)
-        coordinate(to: topRatedDetailCoordinator)
+        topRatedDetailCoordinator = TopRatedDetailCoordinator(navigationController: navigationController!)
+        coordinate(to: topRatedDetailCoordinator!)
     }
 }

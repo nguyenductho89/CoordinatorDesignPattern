@@ -60,6 +60,7 @@
 		1CE513AA241E6560008FAE23 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		D0AA33D42675B661009F55A8 /* HavingKeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingKeyWindow.swift; sourceTree = "<group>"; };
 		D0AA33D72675F885009F55A8 /* AppTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarCoordinator.swift; sourceTree = "<group>"; };
+		D0AA33F1267619EE009F55A8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +77,7 @@
 		1C1DFCCA241E642F00612927 = {
 			isa = PBXGroup;
 			children = (
+				D0AA33F0267619CC009F55A8 /* Tasks */,
 				1C1DFCD5241E643000612927 /* Coordinators */,
 				1C1DFCD4241E643000612927 /* Products */,
 			);
@@ -215,6 +217,14 @@
 				1CD7964D241F471C00A2DC72 /* HistoryDetailViewController.swift */,
 			);
 			path = "History Detail";
+			sourceTree = "<group>";
+		};
+		D0AA33F0267619CC009F55A8 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				D0AA33F1267619EE009F55A8 /* README.md */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
