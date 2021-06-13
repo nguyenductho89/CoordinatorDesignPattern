@@ -24,7 +24,7 @@ extension AppDelegate: Coordinator {
         window = UIWindow()
         /// Login:  AppCoordinator,
         /// Main: AppTabBarCoordinator
-        let coordinator  = AppCoordinator(window: window!)
+        let coordinator  = AppTabBarCoordinator(window: window!)
         self.coordinate(to: coordinator)
     }
 }

@@ -14,25 +14,37 @@ class TabBarCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    private let topRatedNavigationController: UINavigationController = {
+        let topRatedNavigationController = UINavigationController()
+        topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        
+        return topRatedNavigationController
+    }()
+    private let searchNavigationController: UINavigationController = {
+        let searchNavigationController = UINavigationController()
+        searchNavigationController.tabBarItem = UITabBarItem(
+            tabBarSystemItem: .search, tag: 1)
+        return searchNavigationController
+    }()
+    private let historyNavigationController: UINavigationController = {
+        let historyNavigationController = UINavigationController()
+        historyNavigationController.tabBarItem = UITabBarItem(
+            tabBarSystemItem: .history, tag: 2)
+        return historyNavigationController
+    }()
+    private lazy var topRatedCoordinator: TopRatedCoordinator = {
+        return TopRatedCoordinator(navigationController: self.topRatedNavigationController)
+    }()
+    private lazy var searchCoordinator: SearchCoordinator = {
+        return SearchCoordinator(navigationController: self.searchNavigationController)
+    }()
+    private lazy var historyCoordinator: HistoryCoordinator = {
+        return HistoryCoordinator(navigationController: self.historyNavigationController)
+    }()
     
     func start() {
         let tabBarController = TabBarController()
         tabBarController.coordinator = self
-        
-        let topRatedNavigationController = UINavigationController()
-        topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
-        let topRatedCoordinator = TopRatedCoordinator(navigationController: topRatedNavigationController)
-        
-        let searchNavigationController = UINavigationController()
-        searchNavigationController.tabBarItem = UITabBarItem(
-            tabBarSystemItem: .search, tag: 1)
-        let searchCoordinator = SearchCoordinator(navigationController: searchNavigationController)
-        
-        let historyNavigationController = UINavigationController()
-        historyNavigationController.tabBarItem = UITabBarItem(
-            tabBarSystemItem: .history, tag: 2)
-        let historyCoordinator = HistoryCoordinator(navigationController: historyNavigationController)
-        
         tabBarController.viewControllers = [topRatedNavigationController,
                                             searchNavigationController,
                                             historyNavigationController]
