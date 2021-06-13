@@ -17,24 +17,39 @@ class AppTabBarCoordinator: Coordinator, HavingKeyWindow {
         window.makeKeyAndVisible()
     }
     
-    func start() {
-        let tabBarController = TabBarController()
-        tabBarController.coordinator = self
-        
+    private let topRatedNavigationController: UINavigationController = {
         let topRatedNavigationController = UINavigationController()
         topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
-        let topRatedCoordinator = TopRatedCoordinator(navigationController: topRatedNavigationController)
         
+        return topRatedNavigationController
+    }()
+    private let searchNavigationController: UINavigationController = {
         let searchNavigationController = UINavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(
             tabBarSystemItem: .search, tag: 1)
-        let searchCoordinator = SearchCoordinator(navigationController: searchNavigationController)
-        
+        return searchNavigationController
+    }()
+    private let historyNavigationController: UINavigationController = {
         let historyNavigationController = UINavigationController()
         historyNavigationController.tabBarItem = UITabBarItem(
             tabBarSystemItem: .history, tag: 2)
-        let historyCoordinator = HistoryCoordinator(navigationController: historyNavigationController)
+        return historyNavigationController
+    }()
+    private lazy var topRatedCoordinator: TopRatedCoordinator = {
+        return TopRatedCoordinator(navigationController: self.topRatedNavigationController)
+    }()
+    private lazy var searchCoordinator: SearchCoordinator = {
+        return SearchCoordinator(navigationController: self.searchNavigationController)
+    }()
+    private lazy var historyCoordinator: HistoryCoordinator = {
+        return HistoryCoordinator(navigationController: self.historyNavigationController)
+    }()
+    
+    func start() {
         
+        let topRatedCoordinator = TopRatedCoordinator(navigationController: self.topRatedNavigationController)
+        let tabBarController = TabBarController()
+        tabBarController.coordinator = self
         tabBarController.viewControllers = [topRatedNavigationController,
                                             searchNavigationController,
                                             historyNavigationController]
