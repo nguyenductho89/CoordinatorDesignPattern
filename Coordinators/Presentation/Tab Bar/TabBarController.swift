@@ -23,6 +23,6 @@ class TabBarController: UITabBarController {
         self.tabBar.layer.masksToBounds = false
     }
     
-    var coordinator: TabBarCoordinator?
+    var coordinator: Coordinator?
     
 }

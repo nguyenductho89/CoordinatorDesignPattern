@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: Coordinator {
     func start() {
         window = UIWindow()
+        /// Login:  AppCoordinator,
+        /// Main: AppTabBarCoordinator
         let coordinator  = AppCoordinator(window: window!)
         self.coordinate(to: coordinator)
     }

@@ -30,6 +30,7 @@
 		1CE513A7241E64D0008FAE23 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE513A6241E64D0008FAE23 /* TabBarController.swift */; };
 		1CE513AB241E6560008FAE23 /* StartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE513AA241E6560008FAE23 /* StartCoordinator.swift */; };
 		D0AA33D52675B661009F55A8 /* HavingKeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA33D42675B661009F55A8 /* HavingKeyWindow.swift */; };
+		D0AA33D82675F885009F55A8 /* AppTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA33D72675F885009F55A8 /* AppTabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		1CE513A6241E64D0008FAE23 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1CE513AA241E6560008FAE23 /* StartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCoordinator.swift; sourceTree = "<group>"; };
 		D0AA33D42675B661009F55A8 /* HavingKeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingKeyWindow.swift; sourceTree = "<group>"; };
+		D0AA33D72675F885009F55A8 /* AppTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				1C1DFCD6241E643000612927 /* AppDelegate.swift */,
 				1C776543241E989200E70457 /* AppCoordinator.swift */,
+				D0AA33D72675F885009F55A8 /* AppTabBarCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				1C776544241E989200E70457 /* AppCoordinator.swift in Sources */,
 				1CD7964E241F471C00A2DC72 /* HistoryDetailViewController.swift in Sources */,
+				D0AA33D82675F885009F55A8 /* AppTabBarCoordinator.swift in Sources */,
 				1CD7963F241EBEB200A2DC72 /* SearchViewController.swift in Sources */,
 				1CD7964C241F471400A2DC72 /* HistoryDetailCoordinator.swift in Sources */,
 				1CE513A7241E64D0008FAE23 /* TabBarController.swift in Sources */,
