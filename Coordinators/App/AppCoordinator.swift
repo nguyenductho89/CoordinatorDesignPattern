@@ -8,12 +8,13 @@
 
 import UIKit
 
-class AppCoordinator: Coordinator {
-    let window: UIWindow
+class AppCoordinator: Coordinator, HavingKeyWindow {
+    var window: UIWindow
     
-    init(window: UIWindow) {
+    required init(window: UIWindow) {
         self.window = window
     }
+    
     
     func start() {
         let navigationController = UINavigationController()
